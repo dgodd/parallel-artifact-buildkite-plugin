@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+set -x
+
+pwd
+ls -la
+ls -la ../
+
+export AWS_ACCESS_KEY_ID=${BUILDKITE_S3_ACCESS_KEY_ID}
+export AWS_ACCESS_URL=${BUILDKITE_S3_ACCESS_URL}
+export AWS_ACL=${BUILDKITE_S3_ACL}
+export AWS_DEFAULT_REGION=${BUILDKITE_S3_DEFAULT_REGION}
+export AWS_SECRET_ACCESS_KEY=${BUILDKITE_S3_SECRET_ACCESS_KEY}
+export AWS_SSE_ENABLED=${BUILDKITE_S3_SSE_ENABLED}
+./bin/parallel-artifact

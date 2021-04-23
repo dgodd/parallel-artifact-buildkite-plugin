@@ -1,0 +1,15 @@
+name: Parallel Artifact Download
+description: Downloads artifacts in parallel (much faster)
+author: https://github.com/dgodd
+requirements: []
+configuration:
+  properties:
+    pattern:
+      type: string
+    outdir:
+      type: string
+    aws_region:
+      type: string
+    s3_bucket:
+      type: string
+  additionalProperties: false

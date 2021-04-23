@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  lint:
+    image: buildkite/plugin-linter
+    command: ['--id', 'dgodd/parallel-artifact']
+    volumes:
+      - ".:/plugin:ro"
